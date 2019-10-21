@@ -2,6 +2,7 @@ from motor1 import rotatemotor as rotateY
 from motor2 import rotatemotor as rotateX
 from em import toggleMagnet as toggleMagnet
 import time
+import threading
 
 motorcurentx = 0
 motorcurenty = 0
@@ -9,52 +10,85 @@ motorcurenty = 0
 xscale = 5
 yscale = 5
 
-half_square = 1
+half_square = 2
+
 
 def moveMotor(move):
     convertMove(move)
 
 def trackInitial(x2,y2):
-	moveY(y2,0)
-	moveX(x2,0)
+	thread1=moveY(y2,0)
+	thread2=moveX(x2,0)
+    	thread1.start()
+    	thread2.start()
+    	thread1.join()
+    	thread2.join()
 
-def moveX(x1, x2):
-    dx = x2-x1
-    rotateX(dx*xscale)
+class moveX(threading.Thread)
+    x1=0
+    x2=0
+    def __init__(self,t1,t2):
+	threading.Thread.__init__(self)
+	x1=t1
+	x2=t2
+    def run(self):
+    	dx = x2-x1
+    	rotateX(dx*xscale)
 
-def moveY(y1, y2):
-    dy = y2-y1
-    rotateY(-1*dy*yscale)
+class moveY(threading.Thread)
+    y1=0
+    y2=0
+    def __init__(self,t1,t2):
+	threading.Thread.__init__(self)
+	    y1=t1
+	    y2=t2
+    def run(self):
+    	dy = y2-y1
+    	rotateY(-1*dy*yscale)
 
 
 def moveToOldPos(x1, y1):
-    moveY(0,y1)
-    moveX(0,x1)
+    thread1=moveY(0,y1)
+    thread2=moveX(0,x1)
+    thread1.start()
+    thread2.start()
+    thread1.join()
+    thread2.join()
     print("current position "+str(x1) +" "+str(y1))
     print("picking the peice up")
     toggleMagnet(True)
-    #rotateX(half_square)
+    rotateX(-1*half_square)
+    rotateY(1*half_square)
 
 def moveToNewPos(x1,y1,x2,y2):
-    moveY(y1,y2)
-    moveX(x1,x2)
+    thread1=moveY(y1,y2)
+    thread2=moveX(x1,x2)
+    thread1.start()
+    thread2.start()
+    thread1.join()
+    thread2.join()
     print("current position "+str(x2) +" "+str(y2))
     print("dropping the piece moving towards zero")
-    #rotateX(-1*half_square)
+    rotateX(1*half_square)
+    rotateY(-1*half_square)
     toggleMagnet(False)
     moveMotortozero(x2,y2)
 
 def moveMotortozero(x,y):
-    moveY(y,0)
-    moveX(x,0)
+    thread1=moveY(y,0)
+    thread2=moveX(x,0)
+    thread1.start()
+    thread2.start()
+    thread1.join()
+    thread2.join()
     print("finally at zero")
 
-def convertMove():
+def convertMove(move):
     print("inside the motor")
-    x1 = int(input())
-    y1 = int(input())
-    x2 = int(input())
-    y2 = int(input())
+    x1 = 0
+    y1 = 2
+    x2 = 5
+    y2 = 5
     print("current position 0,0")
     moveToOldPos(x1,y1)
     moveToNewPos(x1,y1,x2,y2)
