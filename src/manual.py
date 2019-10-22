@@ -17,6 +17,7 @@ def moveMotor(move):
     convertMove(move)
 
 def trackInitial(x2,y2):
+<<<<<<< HEAD
     thread1=moveY(y2,0)
     thread2=moveX(x2,0)
     thread1.start()
@@ -44,6 +45,35 @@ class moveY(threading.Thread):
         y2=t2
     def run(self):
     	dy = self.y2-self.y1
+=======
+	thread1=moveY(y2,0)
+	thread2=moveX(x2,0)
+    	thread1.start()
+    	thread2.start()
+    	thread1.join()
+    	thread2.join()
+
+class moveX(threading.Thread)
+    x1=0
+    x2=0
+    def __init__(self,t1,t2):
+	threading.Thread.__init__(self)
+	x1=t1
+	x2=t2
+    def run(self):
+    	dx = x2-x1
+    	rotateX(dx*xscale)
+
+class moveY(threading.Thread)
+    y1=0
+    y2=0
+    def __init__(self,t1,t2):
+	threading.Thread.__init__(self)
+	    y1=t1
+	    y2=t2
+    def run(self):
+    	dy = y2-y1
+>>>>>>> be93a2f30f7c17434b93ccd9fe2ac3d88b4cfa05
     	rotateY(-1*dy*yscale)
 
 
@@ -83,12 +113,18 @@ def moveMotortozero(x,y):
     thread2.join()
     print("finally at zero")
 
-def convertMove():
+def convertMove(move):
     print("inside the motor")
     x1 = 0
+<<<<<<< HEAD
     y1 = 0
     x2 = 8
     y2 = 8
+=======
+    y1 = 2
+    x2 = 5
+    y2 = 5
+>>>>>>> be93a2f30f7c17434b93ccd9fe2ac3d88b4cfa05
     print("current position 0,0")
     moveToOldPos(x1,y1)
     moveToNewPos(x1,y1,x2,y2)
