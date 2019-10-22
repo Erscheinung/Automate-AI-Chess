@@ -17,14 +17,14 @@ def moveMotor(move):
     convertMove(move)
 
 def trackInitial(x2,y2):
-	thread1=moveY(y2,0)
-	thread2=moveX(x2,0)
-    	thread1.start()
-    	thread2.start()
-    	thread1.join()
-    	thread2.join()
+    thread1=moveY(y2,0)
+    thread2=moveX(x2,0)
+    thread1.start()
+    thread2.start()
+    thread1.join()
+    thread2.join()
 
-class moveX(threading.Thread)
+class moveX(threading.Thread):
     x1=0
     x2=0
     def __init__(self,t1,t2):
@@ -35,7 +35,7 @@ class moveX(threading.Thread)
     	dx = x2-x1
     	rotateX(dx*xscale)
 
-class moveY(threading.Thread)
+class moveY(threading.Thread):
     y1=0
     y2=0
     def __init__(self,t1,t2):
