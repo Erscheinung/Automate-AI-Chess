@@ -1,0 +1,66 @@
+commit 97445adb570d33e619316126e6feb69700c5852b
+Merge: 7639bd2 6305c38
+Author: Kartikeya Chauhan <kc1.408596@gmail.com>
+Date:   Mon Oct 21 12:14:42 2019 +0530
+
+    Merge pull request #1 from Aeturnum7/master
+    
+    added mlthrdng
+
+commit 6305c384f935629ef167c7e974c65fe83cfa43b6
+Author: Aeturnum7 <42572537+Aeturnum7@users.noreply.github.com>
+Date:   Fri Oct 18 17:27:42 2019 +0530
+
+    added mlthrdng
+
+commit 7639bd255a5868704357a237c9f4b359e3c9db58
+Merge: dab7e81 2ccd8ea
+Author: Vidhyanshu Jain <v.vidu171@gmail.com>
+Date:   Wed Oct 2 23:16:34 2019 +0530
+
+    Merge pull request #3 from vidu171/master
+    
+    Added License
+
+commit 2ccd8ea7cde214edec8fef7f4b26daf6bc99a83e
+Author: Vidhyanshu Jain <v.vidu171@gmail.com>
+Date:   Wed Oct 2 23:16:05 2019 +0530
+
+    Added License
+
+commit dab7e8122dbbed0edccce1310138966df1c17aad
+Author: Vidhyanshu Jain <v.vidu171@gmail.com>
+Date:   Wed Jun 26 15:35:27 2019 +0530
+
+    Update README.md
+
+commit 05a6b3ee7a8e686b54ed86a13d3c4a935868df1e
+Merge: 59a207e 18c84a8
+Author: vidhyanshu jain <v.vidu171@gmail.com>
+Date:   Tue Apr 30 18:58:44 2019 +0530
+
+    Merge branch 'master' of https://github.com/vidu171/Automate-AI-Chess
+
+commit 59a207e3a1fb4f8c48fcb407e75ac38ec4b72cf0
+Author: vidhyanshu jain <v.vidu171@gmail.com>
+Date:   Tue Apr 30 18:58:00 2019 +0530
+
+    added the initial code
+
+commit 18c84a8f57408ae179b442b745a36c494f13d9df
+Author: Vidhyanshu Jain <v.vidu171@gmail.com>
+Date:   Sun Apr 28 10:34:50 2019 +0530
+
+    Update README.md
+
+commit 7629e5d910e546bfb19dd4547bac2d2b0decfb76
+Author: vidhyanshu jain <v.vidu171@gmail.com>
+Date:   Sun Apr 28 10:15:28 2019 +0530
+
+    added the initial code
+
+commit b1ac060eb3efb823c290582f31b051261a6d8745
+Author: Vidhyanshu Jain <v.vidu171@gmail.com>
+Date:   Sun Apr 28 10:11:06 2019 +0530
+
+    Initial commit
